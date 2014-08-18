@@ -42,6 +42,14 @@
   <div id='no_results' style='display: none'>
     <h3>No results matched your search.</h3>
     <p>Try typing the first few words of the text you&rsquo;d like to edit.</p>
+    <p>
+      <form action="<%=  project_blurbs_path(project_id: @project) %>" method="POST">
+        <input type="hidden" name="project_id" value="<%= @project.id %>"/>
+        <input type="hidden" name="locale_id" value="<%= @locale.id %>"/>
+        <a href="#" id="new-key">Create the key</a>
+        <input type="hidden" name="key" value=""/>
+      </form>
+    </p>
   </div>
 
   <ul class='blurbs-list'>
