@@ -11,6 +11,7 @@ class Api::V2::DraftBlurbsController < Api::V2::BaseController
 
   def create
     current_project.create_defaults parse_json
+    current_project.deploy!
     render :json => '', :status => :created
   end
 
