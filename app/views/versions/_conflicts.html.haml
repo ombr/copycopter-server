@@ -1,0 +1,11 @@
+- if @conflicts.any?
+  %h5 Conflicts :
+  %table
+    %tbody
+      - @conflicts.each do |localisation|
+        %tr
+          %td
+            = link_to [:new, localisation, :version] do
+              = localisation.blurb.project.name
+          %td
+            = localisation.published_content

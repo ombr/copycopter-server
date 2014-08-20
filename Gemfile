@@ -11,7 +11,8 @@ gem 'pg'
 gem 'rails', '~> 3.2.6'
 gem 'thin'
 gem 'yajl-ruby', require: 'yajl'
-gem "jquery-rails"
+gem 'jquery-rails'
+gem 'haml-rails'
 
 group :assets do
   gem 'sass-rails'

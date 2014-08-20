@@ -79,6 +79,15 @@ class Localization < ActiveRecord::Base
     latest_version.revise attributes
   end
 
+  def in_other_projects
+    Localization
+      .joins(:blurb)
+      .where('blurbs.key = ?', blurb.key)
+      .where('blurbs.project_id != ?', blurb.project_id)
+      .joins(:locale)
+      .where('locales.key = ?', locale.key)
+  end
+
   private
 
   def create_first_version

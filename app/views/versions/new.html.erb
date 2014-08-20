@@ -23,6 +23,7 @@
   <%= render 'form', :form => form, :version => @version,
         :localization => @localization %>
 
+  <%= render 'conflicts' %>
   <%= form.actions do %>
     <%= form.action(:submit, label: 'Save Blurb') %>
 
