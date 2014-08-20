@@ -16,6 +16,7 @@ class BlurbsController < ApplicationController
                         .localizations
                         .in_locale(locale)
                         .first
+    localization.revise(published: true).save!
     redirect_to new_localization_version_path(localization_id: localization)
   end
 end
